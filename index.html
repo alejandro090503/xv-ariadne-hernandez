@@ -557,17 +557,6 @@ footer::after{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;b
 }
 #env-flash{position:fixed;inset:0;z-index:9999;background:var(--bg);opacity:0;pointer-events:none;}
 
-/* ============ LLUVIA DE SOBRES (de boda-jeffersson-y-vanessa) ============ */
-.env-rain{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
-.env-rain-item{position:absolute;top:-46px;will-change:transform;opacity:0}
-.env-stage{position:relative;z-index:1}
-.env-seal{position:absolute;top:52%;left:50%;width:23%;aspect-ratio:1;transform:translate(-50%,-50%);z-index:3;transition:opacity .35s ease,transform .5s cubic-bezier(.4,0,.2,1);pointer-events:none}
-.env-interactive.open .env-seal{opacity:0;transform:translate(-50%,-50%) scale(.7)}
-.env-body.landed{animation:envBreathe 3.6s ease-in-out infinite}
-@keyframes envBreathe{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-.env-tap-hint.show{opacity:.95;animation:envHintPulse 2.4s ease-in-out infinite}
-.env-interactive.open~.env-tap-hint{opacity:0!important;animation:none;pointer-events:none}
-
 /* ============ QR PREMIUM (album compartido) ============ */
 .qr-premium{display:flex;flex-direction:column;align-items:center;gap:16px;margin-top:28px}
 .qr-outer{position:relative;padding:18px;background:#FFFDF8;border:1px solid rgba(160,124,51,.55);box-shadow:0 16px 44px rgba(5,13,48,.35);display:inline-block;border-radius:4px}
@@ -1146,7 +1135,7 @@ footer::after{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;b
         </div>
       </div>
 
-      <p class="rv" style="font-family:var(--sans);font-weight:500;font-size:17px;color:var(--ink);line-height:1.75;margin-bottom:16px">Me honra tu presencia en código de etiqueta formal.<br>Por favor evita el blanco y los tonos azules — son los colores de la festejada.</p>
+      <p class="rv" style="font-family:var(--sans);font-weight:500;font-size:17px;color:var(--ink);line-height:1.75;margin-bottom:16px">Me honra tu presencia en código de etiqueta formal.<br>Por favor evita los tonos azules — son los colores de la festejada.</p>
 
       <a href="https://www.pinterest.com.mx/search/pins/?q=formal%20evening%20guest%20outfit%20champagne%20gold%20blush%20silver" target="_blank" rel="noopener" class="rv" style="display:inline-flex;align-items:center;gap:8px;padding:12px 28px;font-family:var(--italiana);font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold-deep);text-decoration:none;border:1px solid rgba(160,124,51,.4);border-radius:50px;background:rgba(160,124,51,.06);transition:all .3s ease;margin-bottom:36px;cursor:pointer" onmouseover="this.style.background='rgba(160,124,51,.15)';this.style.borderColor='rgba(160,124,51,.6)'" onmouseout="this.style.background='rgba(160,124,51,.06)';this.style.borderColor='rgba(160,124,51,.4)'">
         <svg viewBox="0 0 24 24" width="16" height="16" fill="var(--gold-deep)" style="flex-shrink:0;opacity:.7"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
@@ -1161,7 +1150,6 @@ footer::after{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;b
       <div class="dress-avoid rv">
         <div class="swatch-group-title">Colores a Evitar</div>
         <div class="avoid-list">
-          <div class="avoid-item"><span class="avoid-c" style="background:#FFFFFF;border:1.5px solid var(--hair)"></span>Blanco</div>
           <div class="avoid-item"><span class="avoid-c" style="background:#74a7fe"></span>Azul cielo</div>
           <div class="avoid-item"><span class="avoid-c" style="background:#0056d6"></span>Azul rey</div>
           <div class="avoid-item"><span class="avoid-c" style="background:#0042aa"></span>Azul marino</div>
@@ -1198,71 +1186,7 @@ footer::after{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;b
     <p class="gal-hint rv">arrastra para girar</p>
   </section>
 
-  <div class="seam" style="--from:var(--surface);--to:var(--bg)" aria-hidden="true"></div>
-
-  <!-- ════════════════ MESA DE REGALOS ════════════════ -->
-  <section class="sec section-bg" id="regalos" style="text-align:center;position:relative;overflow:hidden">
-    <div class="env-rain" id="envRain" aria-hidden="true"></div>
-    <div class="sec-inner env-stage">
-      <div class="eyebrow rv">Celebra Conmigo</div>
-      <h2 class="rv">Lluvia de <em>Sobres</em></h2>
-
-      <div class="gifts-wrap rv" style="margin-top:36px">
-        <p class="gifts-sub">Tu presencia es mi regalo más preciado. Si deseas tener un detalle conmigo, habrá una mesa especial para tu sobre.</p>
-
-        <button class="env-interactive" id="envGift" type="button" aria-label="Sobre — toca para abrir" aria-expanded="false">
-          <div class="env-body" id="envGiftBody">
-            <svg class="env-svg" viewBox="0 0 260 200" preserveAspectRatio="none" aria-hidden="true">
-              <defs>
-                <linearGradient id="env-fill" x1="0" y1="1" x2="1" y2="0">
-                  <stop offset="0%" stop-color="#FFFCF3"/>
-                  <stop offset="100%" stop-color="#E4EDFD"/>
-                </linearGradient>
-              </defs>
-              <rect x="18" y="52" width="224" height="132" rx="10" fill="url(#env-fill)" stroke="rgba(160,124,51,.6)" stroke-width="1.4"/>
-              <path d="M18 184 L130 110 L242 184" stroke="rgba(160,124,51,.38)" stroke-width="1" fill="none"/>
-              <line x1="90"  y1="30" x2="90"  y2="20" stroke="#A07C33" stroke-width="1.3" stroke-linecap="round" opacity=".55"/>
-              <line x1="130" y1="24" x2="130" y2="14" stroke="#A07C33" stroke-width="1.3" stroke-linecap="round" opacity=".7"/>
-              <line x1="170" y1="30" x2="170" y2="20" stroke="#A07C33" stroke-width="1.3" stroke-linecap="round" opacity=".55"/>
-              <line x1="110" y1="18" x2="110" y2="10" stroke="#D4BC8A" stroke-width="1" stroke-linecap="round" opacity=".4"/>
-              <line x1="150" y1="18" x2="150" y2="10" stroke="#D4BC8A" stroke-width="1" stroke-linecap="round" opacity=".4"/>
-            </svg>
-            <svg class="env-seal" viewBox="0 0 60 60" aria-hidden="true">
-              <circle cx="30" cy="30" r="28" fill="#A8C6EC"/>
-              <circle cx="30" cy="30" r="28" fill="none" stroke="#7FA6D6" stroke-width="2" opacity=".7"/>
-              <circle cx="30" cy="30" r="21.5" fill="none" stroke="#B9962F" stroke-width="1.3" opacity=".95"/>
-              <text x="30" y="36" text-anchor="middle" font-family="'Pinyon Script',cursive" font-size="15" fill="#8A6A1E">Ariadne</text>
-            </svg>
-            <div class="env-flap-wrap" aria-hidden="true">
-              <svg viewBox="0 0 224 86" preserveAspectRatio="none" style="width:100%;height:100%">
-                <defs>
-                  <linearGradient id="flap-fill" x1="0" y1="1" x2="1" y2="0">
-                    <stop offset="0%" stop-color="#D4C5B2"/>
-                    <stop offset="100%" stop-color="#FFFCF3"/>
-                  </linearGradient>
-                </defs>
-                <path d="M0 0 L112 86 L224 0 Z" fill="url(#flap-fill)" stroke="rgba(160,124,51,.55)" stroke-width="1.5" stroke-linejoin="round"/>
-              </svg>
-            </div>
-          </div>
-          <div class="env-open-content" aria-live="polite">
-            <svg class="env-mailbox-icon" viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <rect x="8" y="22" width="36" height="24" rx="5"/>
-              <path d="M8 30 Q26 38 44 30"/>
-              <rect x="18" y="8" width="16" height="16" rx="2"/>
-              <path d="M18 8 Q26 3 34 8"/>
-              <rect x="20" y="28" width="12" height="2.5" rx="1.25" fill="currentColor" stroke="none" opacity=".4"/>
-            </svg>
-            <p class="env-title">Lluvia de Sobres</p>
-            <p class="env-desc">En la celebración habrá una mesa especial para tus sobres. ¡Gracias por tu cariño!</p>
-          </div>
-        </button>
-        <p class="env-tap-hint" id="envGiftHint">Toca el sobre</p>
-      </div>
-    </div>
-  </section>
-
-  <div class="seam" style="--from:var(--bg);--to:#06103A" aria-hidden="true"></div>
+  <div class="seam" style="--from:var(--surface);--to:#06103A" aria-hidden="true"></div>
 
   <!-- ════════════════ ÁLBUM COMPARTIDO ════════════════ -->
   <section class="sec sec-dark" style="text-align:center;overflow:hidden">
@@ -1452,16 +1376,25 @@ function launchInvitation(){
     if(vinylBtn) vinylBtn.classList.add('is-ready');
   }
 
+  let revealed=false;
+  function revealInvitation(){
+    if(revealed) return;
+    revealed=true;
+    envScreen.style.display='none';
+    wrap.style.visibility='visible';
+    launchInvitation();
+    startMusic();
+    gsap.to(envFlash,{opacity:0,duration:1.2,ease:'power2.inOut',delay:.08,
+      onComplete:()=>{envFlash.style.display='none'}});
+    // por si el fundido tampoco avanza
+    setTimeout(()=>{envFlash.style.opacity='0';envFlash.style.display='none';},2600);
+  }
+
   function triggerFlash(){
     if(flashed) return;
     flashed=true;
-    gsap.to(envFlash,{opacity:1,duration:1.3,ease:'power2.inOut',onComplete:()=>{
-      envScreen.style.display='none';
-      wrap.style.visibility='visible';
-      launchInvitation();
-      startMusic();
-      gsap.to(envFlash,{opacity:0,duration:1.2,ease:'power2.inOut',delay:.08,onComplete:()=>{envFlash.style.display='none'}});
-    }});
+    gsap.to(envFlash,{opacity:1,duration:1.3,ease:'power2.inOut',onComplete:revealInvitation});
+    setTimeout(revealInvitation,2600);   // respaldo si el tween no progresa
   }
 
   function openEnvelope(){
@@ -1481,6 +1414,9 @@ function launchInvitation(){
         }
       });
       envVideo.addEventListener('ended',triggerFlash,{once:true});
+      // si el video se atasca (buffering o autoplay bloqueado) no dejamos
+      // al invitado atrapado en la portada
+      setTimeout(triggerFlash,(VIDEO_CUT+3)*1000);
     }else{
       triggerFlash();
     }
@@ -1539,7 +1475,6 @@ document.querySelectorAll('.itin-item').forEach(function(item,idx){
 });
 
 // ── SWATCHES ──
-gsap.fromTo('.swatch',{opacity:0,scale:.4,y:28},{opacity:1,scale:1,y:0,duration:1,stagger:.09,ease:'elastic.out(1,.6)',scrollTrigger:{trigger:'.dress-swatches',start:'top 86%'}});
 
 // ── 3D WHEEL ──
 (function initWheel(){
@@ -1759,86 +1694,6 @@ if(musicBtn){
   });
 }
 
-// ── LLUVIA DE SOBRES ──
-// Cae hasta que la seccion se centra; ahi aterriza uno.
-(function(){
-  var sec=document.getElementById('regalos'),rain=document.getElementById('envRain'),
-      btn=document.getElementById('envGift'),body=document.getElementById('envGiftBody'),
-      hint=document.getElementById('envGiftHint');
-  if(!sec||!rain||!btn) return;
-  if(prefersReduced){ gsap.set(btn,{opacity:1}); if(hint)hint.classList.add('show'); }
-  var raining=true,landed=false,spawnCall=null,alive=0;
-  var MAX_ALIVE=18;
-
-  function makeEnvelope(){
-    if(alive>=MAX_ALIVE) return;
-    alive++;
-    var el=document.createElementNS('http://www.w3.org/2000/svg','svg');
-    el.setAttribute('viewBox','0 0 34 24');
-    el.setAttribute('class','env-rain-item');
-    var w=16+Math.random()*16;
-    el.style.width=w+'px'; el.style.height=(w*24/34)+'px';
-    el.style.left=(Math.random()*100)+'%';
-    el.innerHTML='<rect x="1" y="1" width="32" height="22" rx="2.5" fill="#FFFCF3" stroke="#A07C33" stroke-width="1.2"/>'+
-                 '<path d="M1 1 L17 13 L33 1" fill="none" stroke="#A07C33" stroke-width="1.2" stroke-linejoin="round"/>';
-    rain.appendChild(el);
-    var H=sec.offsetHeight+80,dur=5+Math.random()*4;
-    function kill(){ if(el.parentNode){ el.remove(); alive--; } }
-    gsap.timeline({onComplete:kill})
-      .fromTo(el,{y:-46,x:0,rotation:(Math.random()-.5)*50,opacity:0},
-                 {y:H,x:(Math.random()-.5)*70,rotation:(Math.random()-.5)*160,
-                  duration:dur,ease:'none'},0)
-      .fromTo(el,{opacity:0},{opacity:.75,duration:dur*.18,ease:'power1.out'},0)
-      .to(el,{opacity:0,duration:dur*.25,ease:'power1.in'},dur*.75);
-  }
-
-  // Spawn por el ticker de GSAP (no setInterval): se pausa con la pestaña
-  // en segundo plano y evita acumulacion.
-  function scheduleSpawn(){
-    spawnCall=gsap.delayedCall(.52,function(){
-      if(!raining) return;
-      makeEnvelope();
-      scheduleSpawn();
-    });
-  }
-  function startRain(){
-    for(var i=0;i<7;i++) gsap.delayedCall(i*.26,makeEnvelope);
-    scheduleSpawn();
-  }
-  function stopRain(){
-    raining=false;
-    if(spawnCall) spawnCall.kill();
-    gsap.to(rain,{opacity:0,duration:1.1,ease:'power2.out',
-      onComplete:function(){ rain.innerHTML=''; alive=0; }});
-  }
-  function land(){
-    if(landed) return; landed=true;
-    stopRain();
-    gsap.fromTo(btn,
-      {opacity:0,y:-150,rotation:-12,scale:.82},
-      {opacity:1,y:0,rotation:0,scale:1,duration:1.15,ease:'back.out(1.5)',
-       onComplete:function(){
-         if(body) body.classList.add('landed');
-         if(hint) hint.classList.add('show');
-       }});
-  }
-
-  if(!prefersReduced) startRain();
-  // 'center 55%' y no 'center center': el reveal desplaza 28px las secciones
-  // aun no visibles y con el centro exacto el umbral nunca se alcanza.
-  ScrollTrigger.create({trigger:sec,start:'center 55%',once:true,onEnter:land,onEnterBack:land});
-
-  function toggle(e){
-    if(e) e.preventDefault();
-    if(!landed) return;
-    var open=btn.classList.toggle('open');
-    btn.setAttribute('aria-expanded',open?'true':'false');
-    if(open&&body) body.classList.remove('landed');
-    ScrollTrigger.refresh();
-  }
-  btn.addEventListener('click',toggle);
-})();
-
 // ── RSVP PANEL INTEGRATION ──
 (function(){
   const PANEL_API = 'https://panel-invitados.vercel.app/api/confirmar';
@@ -1996,8 +1851,6 @@ gsap.utils.toArray('.rv').forEach(el=>{
 
 // ── FAMILIA CARDS ──
 gsap.fromTo('.familia-card',{opacity:0,y:40,scale:.96},{opacity:1,y:0,scale:1,duration:1.1,stagger:.1,ease:'power4.out',scrollTrigger:{trigger:'.familia-wrap',start:'top 82%'}});
-gsap.fromTo('.padrino-card',{opacity:0,y:32},{opacity:1,y:0,duration:1,stagger:.06,ease:'power3.out',scrollTrigger:{trigger:'.padrinos-grid',start:'top 82%'}});
-gsap.fromTo('.damas-card',{opacity:0,y:28},{opacity:1,y:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:'.damas-card',start:'top 86%'}});
 
 // ── LOCATION ──
 gsap.fromTo('.loc-card',{opacity:0,y:44,rotateX:8,transformOrigin:'center top'},{opacity:1,y:0,rotateX:0,duration:1.3,ease:'power4.out',scrollTrigger:{trigger:'.loc-card',start:'top 82%'}});
