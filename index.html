@@ -131,12 +131,12 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:600;color:var(--gold)}
 .hero-bg-overlay{
   position:absolute;inset:0;z-index:-1;
   background:
-    radial-gradient(ellipse at center top, transparent 20%, rgba(6,16,58,.5) 70%),
+    radial-gradient(ellipse at center top, transparent 20%, rgba(46,111,183,.58) 70%),
     linear-gradient(180deg,
-      rgba(6,16,58,.62) 0%,
-      rgba(6,16,58,.18) 35%,
-      rgba(6,16,58,.18) 55%,
-      rgba(6,16,58,.80) 100%);
+      rgba(46,111,183,.70) 0%,
+      rgba(46,111,183,.30) 35%,
+      rgba(46,111,183,.34) 55%,
+      rgba(29,74,128,.86) 100%);
 }
 .hero-frame{position:absolute;inset:clamp(24px,4vw,48px);z-index:-1;border:1px solid rgba(160,124,51,.32);pointer-events:none;}
 .hero-frame::before,.hero-frame::after{content:"";position:absolute;width:24px;height:24px;border:1px solid rgba(160,124,51,.65);}
@@ -161,8 +161,8 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:600;color:var(--gold)}
 .hero-eyebrow::before,.hero-eyebrow::after{content:"";display:inline-block;width:22px;height:1px;background:#E8C06A;vertical-align:middle;margin:0 10px 3px 0;}
 .hero-eyebrow::after{margin:0 0 3px 10px}
 .hero-wir-heiraten{
-  font-family:var(--sans);font-weight:400;font-size:10px;letter-spacing:.7em;text-transform:uppercase;
-  color:rgba(253,250,241,.6);padding-left:.7em;margin:0 0 14px;line-height:1;
+  font-family:var(--sans);font-weight:500;font-size:12px;letter-spacing:.62em;text-transform:uppercase;
+  color:rgba(253,250,241,.88);text-shadow:0 1px 10px rgba(0,0,0,.35);padding-left:.62em;margin:0 0 14px;line-height:1;
 }
 .hero-name{
   font-family:var(--display);font-style:italic;font-weight:500;
@@ -592,7 +592,7 @@ footer::after{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;b
           <path d="M75 20 L95 20"/><path d="M105 20 L125 20"/>
         </g>
       </svg>
-      <p class="hero-invitation" data-anim="hero-invitation">Una invitación a mis XV años</p>
+      <p class="hero-invitation" data-anim="hero-invitation">Una invitación a mis XV años</p>
       <div class="hero-eyebrow" data-anim="hero-eyebrow">Irapuato · Gto · 2026</div>
       <p class="hero-wir-heiraten" data-anim="hero-wh">Mis XV Años</p>
       <h1 class="hero-name">
@@ -610,7 +610,7 @@ footer::after{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;b
 
   <!-- ════════════════ INVITACIÓN ════════════════ -->
   <section class="sec section-bg" style="padding-top:52px;padding-bottom:min(12vh,96px)">
-    <div class="sec-flora" style="background-image:url('mariposas2.webp');opacity:.18"></div>
+    <div class="sec-flora" style="background-image:url('mariposas1.webp');opacity:.18"></div>
     <div class="sec-inner rv">
       <div class="verse-wrap">
         <svg class="verse-ornament" viewBox="0 0 320 70" fill="none" aria-hidden="true">
@@ -656,7 +656,7 @@ footer::after{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;b
 
   <!-- ════════════════ COUNTDOWN ════════════════ -->
   <section class="sec section-surface countdown" style="padding-top:min(12vh,88px);padding-bottom:min(12vh,88px)">
-    <div class="sec-flora" style="background-image:url('mariposas1.webp');opacity:.42"></div>
+    <div class="sec-flora" style="background-image:url('mariposas5.webp');opacity:.42"></div>
     <div class="sec-inner">
       <div class="eyebrow">Cuenta Regresiva</div>
       <h2>Contando los <em>Días</em></h2>
@@ -674,7 +674,7 @@ footer::after{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;b
 
   <!-- ════════════════ FAMILIAS ════════════════ -->
   <section class="sec section-bg" style="text-align:center">
-    <div class="sec-flora" style="background-image:url('mariposas1.webp');opacity:.12"></div>
+    <div class="sec-flora" style="background-image:url('mariposas2.webp');opacity:.12"></div>
     <div class="sec-inner">
       <div class="eyebrow">Con la bendición de</div>
       <h2>Mi <em>Familia</em></h2>
@@ -761,7 +761,7 @@ footer::after{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;b
 
   <!-- ════════════════ HOSPEDAJE ════════════════ -->
   <section class="sec section-bg" style="text-align:center;overflow:hidden">
-    <div class="sec-flora" style="background-image:url('mariposas1.webp');opacity:.12"></div>
+    <div class="sec-flora" style="background-image:url('mariposas3.webp');opacity:.12"></div>
     <div class="sec-inner">
       <div class="eyebrow rv">Para tu Comodidad</div>
       <h2 class="rv">Hospedaje <em>Recomendado</em></h2>
@@ -780,7 +780,7 @@ footer::after{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;b
 
   <!-- ════════════════ ITINERARIO ════════════════ -->
   <section class="sec section-bg" style="text-align:center;overflow:hidden">
-    <div class="sec-flora" style="background-image:url('mariposas1.webp');opacity:.14"></div>
+    <div class="sec-flora" style="background-image:url('mariposas4.webp');opacity:.14"></div>
     <div class="sec-inner">
       <div class="eyebrow">El Programa del Día</div>
       <h2>El <em>Itinerario</em></h2>
@@ -867,7 +867,7 @@ footer::after{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;b
 
   <!-- ════════════════ DRESS CODE ════════════════ -->
   <section class="sec section-surface dress" style="text-align:center">
-    <div class="sec-flora" style="background-image:url('mariposas2.webp');opacity:.20"></div>
+    <div class="sec-flora" style="background-image:url('mariposas5.webp');opacity:.20"></div>
     <div class="sec-inner">
       <div class="eyebrow">Código de Vestimenta</div>
       <h2 class="rv">Etiqueta <em>Formal</em></h2>
